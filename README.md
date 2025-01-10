@@ -1,46 +1,112 @@
-# Spamurai: Gmail Spam Protection Extension
+# Spamurai: AI-Powered Gmail Protection
 
-Spamurai is a Chrome extension designed to enhance Gmail's defense against spam emails. It classifies incoming emails as either spam or non-spam (ham) based on a model trained with a comprehensive dataset of labeled emails. The goal is to help users identify and manage spam emails more effectively.  
-[Link to Spamurai Extension](https://spamurai.online/)
+Spamurai is a sophisticated email protection system that enhances Gmail's native spam filtering capabilities through AI-powered analysis, providing real-time threat assessment and detailed analytics via a sleek Chrome extension.
 
-## Features
+Visit our website: [spamurai.online](https://spamurai.online)
 
-- Classifies emails as spam or non-spam (ham) using advanced machine learning
-- Helps improve email organization by filtering spam effectively
-- Additional safety checks for Gmail (more details on the website)
+## Core Technologies
 
-## Training the Model
+### AI Model ([Separate Repository](link-to-ai-repo))
+- LSTM-based classification model trained on ~5,000 labeled emails
+- Built with TensorFlow/Keras
+- Achieves high accuracy in spam detection
+- Trained on balanced dataset from Kaggle
+- Handles text preprocessing and classification
+- Integrated with main application via FastAPI endpoint
 
-This repository contains the Jupyter notebook used for training the spam classification model for Spamurai. The notebook details the entire process, from data preparation to model evaluation. Here's a brief overview of the steps involved:
+### Frontend (Chrome Extension)
+- Built with React 18 + Vite
+- Styled using Tailwind CSS
+- Key Components:
+  - Real-time analysis display
+  - Interactive dashboard
+  - Spam history visualization (Recharts)
+  - Custom progress indicators
+  - Tab-based interface (Radix UI)
+  - Smooth animations (Framer Motion)
 
-### Data Preparation
-I use a dataset of labeled emails (around 5,000 emails from Kaggle) to train the model. The data is balanced by downsampling, and preprocessing steps like removing punctuation and stopwords are applied.
+### Backend Infrastructure
+- FastAPI application server
+- PostgreSQL database (AWS RDS)
+- Features:
+  - Real-time email analysis
+  - OAuth 2.0 authentication
+  - Spam statistics tracking
+  - Email authentication verification (SPF/DKIM)
 
-You can access the email dataset used for training [here](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset).
+### AWS Infrastructure
+- Hosted on EC2 instances
+- Route 53 DNS Management:
+  - Manages domain routing
+  - Handles health checks
+  - Automated domain management
+- RDS (Relational Database Service):
+  - Managed PostgreSQL instance
+  - Automated backups
+  - High availability
+  - Scalable performance
+- SSL/TLS Encryption:
+  - Secure data transmission
+  - HTTPS enforcement
+  - Server identity verification
 
-### Model Building
-A Long Short-Term Memory (LSTM) model is used to classify emails. The model uses an LSTM architecture to classify emails based on the content of the email body. The model is trained using TensorFlow and Keras.
+### Security
+- Google OAuth 2.0 authentication
+- Token-based authorization
+- SSL/TLS encryption for all communications
+- No storage of email content
+- Secure credential management
 
-### Evaluation
-The model's performance is evaluated using accuracy (you can extend it to other metrics like precision, recall, and F1 score as needed).
+## API Endpoints
 
-### Prediction
-The trained model can be used to predict whether a given email is spam or not (you can use this in the extension once integrated with Gmail).
-
-## Setup Instructions
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/spamurai.git
+```plaintext
+GET  /api/health          - Service health check
+GET  /api/db_health      - Database connection check
+POST /api/predict        - Email analysis
+GET  /api/spam-stats     - User spam statistics
 ```
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-3. Run the Jupyter notebook to train the model and evaluate its performance.
 
-## Usage
-Now you can integrate the model into your own project. Once the model is trained, you can use it to classify incoming emails, marking them as spam or non-spam based on the classification results.
+## Database Schema
+
+The system uses PostgreSQL with three main tables:
+- Users: Stores user identification and preferences
+- Messages: Maintains analysis results and message metadata
+- DailySpamStats: Tracks spam statistics over time
+
+## Installation
+
+### Extension Setup
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up OAuth credentials:
+   - Create Google Cloud project
+   - Enable Gmail API
+   - Configure OAuth consent
+   - Create OAuth 2.0 Client ID
+4. Configure manifest.json
+5. Build: `npm run build`
+6. Load in Chrome
+
+### Backend Setup
+1. Clone the repository
+2. Install requirements: `pip install -r requirements.txt`
+3. Configure environment variables
+4. Set up PostgreSQL database
+5. Run server: `uvicorn main:app --reload`
+
+## Contributing
+
+We welcome contributions! Please read our contributing guidelines and submit pull requests for any enhancements.
 
 ## License
-Distributed under the Apache-2.0 License. See `LICENSE` for more information.
+
+[Add your license information here]
+
+## Acknowledgments
+
+- Gmail API
+- Google OAuth 2.0
+- FastAPI
+- React
+- Tailwind CSS
+- AWS Services

@@ -29,14 +29,14 @@ The trained model can be used to predict whether a given email is spam or not (y
 
 ## Setup Instructions
 
-Clone the repository:
+1. Clone the repository:
 ```bash
 git clone https://github.com/your-username/spamurai.git
 ```
 2. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+```bash
+pip install -r requirements.txt
+```
 3. Run the Jupyter notebook to train the model and evaluate its performance.
 
 ## Usage

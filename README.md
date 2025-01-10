@@ -31,11 +31,7 @@ The model's performance is evaluated using accuracy (you can extend it to other 
 ```bash
 git clone https://github.com/your-username/spamurai.git
 ```
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-3. Run the Jupyter notebook to train the model and evaluate its performance.
+2. Run the Jupyter notebook to train the model and evaluate its performance.
 
 ## Usage
 Now you can integrate the model into your own project. Once the model is trained, you can use it to classify incoming emails, marking them as spam or non-spam based on the classification results.

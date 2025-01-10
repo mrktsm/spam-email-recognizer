@@ -14,7 +14,7 @@ Spamurai is a Chrome extension designed to enhance Gmail's defense against spam 
 This repository contains the Jupyter notebook used for training the spam classification model for Spamurai. The notebook details the entire process, from data preparation to model evaluation. Here's a brief overview of the steps involved:
 
 ### Data Preparation
-We use a dataset of labeled emails (around 5,000 emails from Kaggle) to train the model. The data is balanced by downsampling, and preprocessing steps like removing punctuation and stopwords are applied.
+I use a dataset of labeled emails (around 5,000 emails from Kaggle) to train the model. The data is balanced by downsampling, and preprocessing steps like removing punctuation and stopwords are applied.
 
 You can access the email dataset used for training [here](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset).
 

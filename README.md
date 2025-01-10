@@ -40,9 +40,7 @@ pip install -r requirements.txt
 3. Run the Jupyter notebook to train the model and evaluate its performance.
 
 ## Usage
-Once the model is trained, you can integrate it into the **Spamurai** extension. The extension leverages the trained model to classify incoming emails, marking them as spam or non-spam based on the classification results.
-
-For more information, visit our website: [Spamurai Website](https://link-to-spamurai-extension.com).
+Now you can integrate the model into your own project. Once the model is trained, you can use it to classify incoming emails, marking them as spam or non-spam based on the classification results.
 
 ## License
 Distributed under the Apache-2.0 License. See `LICENSE` for more information.

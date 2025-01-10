@@ -25,9 +25,6 @@ A Long Short-Term Memory (LSTM) model is used to classify emails. The model uses
 ### Evaluation
 The model's performance is evaluated using accuracy (you can extend it to other metrics like precision, recall, and F1 score as needed).
 
-### Prediction
-The trained model can be used to predict whether a given email is spam or not (you can use this in the extension once integrated with Gmail).
-
 ## Setup Instructions
 
 1. Clone the repository:

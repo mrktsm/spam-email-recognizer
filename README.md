@@ -12,7 +12,7 @@ The Spamurai Gmail spam protection extension is powered by the neural network de
 
 ## Training the Model
 
-This repository contains the Jupyter notebook used for training the spam classification model for Spamurai. The notebook details the entire process, from data preparation to model evaluation. Here's a brief overview of the steps involved:
+This repository contains the Jupyter notebook used for training the spam classification model. The notebook details the entire process, from data preparation to model evaluation. Here's a brief overview of the steps involved:
 
 ### Data Preparation
 I use a dataset of labeled emails (around 200,000 emails from Kaggle) to train the model. The data is balanced by downsampling, and preprocessing steps like removing punctuation and stopwords are applied.
